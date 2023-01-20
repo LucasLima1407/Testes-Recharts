@@ -4,22 +4,24 @@ import {
   PieChart,
   Pie,
   Tooltip,
-  Cell
+  Cell,
+  Legend
 } from "recharts";
 
 const App = () => {
   const data = [
-    { name: "Aprovados", value: 1000000000 },
-    { name: "Reprovados", value: 1500000000 },
+    { name: "Aprovados", value: 300},
+    { name: "Reprovados", value: 150 },
   ];
 
-  const COLORS = ['#ff0000', '#164212'];
+  const COLORS = ['#164212', '#ff0000'];
 
   return (
     <div style={{ textAlign: "center" }}>
       <h1>Aprovados/Reprovados</h1>
       <div className="App">
         <PieChart width={400} height={400}>
+        <Legend layout="horizontal" verticalAlign="top"/>
           <Pie
             dataKey="value"
             isAnimationActive={false}
@@ -29,10 +31,11 @@ const App = () => {
             outerRadius={80}
             fill="#8884d8"
             label
-          />
+          >
           {data.map((entry, index) => (
-                                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                     ))}
+              </Pie>
           <Tooltip />
         </PieChart>
       </div>
