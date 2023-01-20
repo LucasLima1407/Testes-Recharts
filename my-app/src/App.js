@@ -1,17 +1,11 @@
 import React from "react";
 import "./App.css";
-import {
-  PieChart,
-  Pie,
-  Tooltip,
-  Cell,
-  Legend
-} from "recharts";
+import { PieChart,Pie,Tooltip,Cell,Legend } from "recharts";
 
 const App = () => {
   const data = [
     { name: "Aprovados", value: 300},
-    { name: "Reprovados", value: 150 },
+    { name: "Reprovados", value: 150},
   ];
 
   const COLORS = ['#164212', '#ff0000'];
@@ -27,7 +21,7 @@ const App = () => {
             isAnimationActive={false}
             data={data}
             cx={200}
-            cy={200}
+            cy={120}
             outerRadius={80}
             fill="#8884d8"
             label
