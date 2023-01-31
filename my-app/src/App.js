@@ -3,10 +3,7 @@ import "./App.css";
 import { PieChart,Pie,Tooltip,Cell,Legend } from "recharts";
 
 const App = () => {
-  const data = [
-    { name: "Aprovados", value: 300},
-    { name: "Reprovados", value: 150},
-  ];
+    const data = require('./dados.json')
 
   const COLORS = ['#164212', '#ff0000'];
 
@@ -19,10 +16,11 @@ const App = () => {
           <Pie
             dataKey="value"
             isAnimationActive={false}
-            data={data}
+            data={data} //Pegando os dados
+            //cx e cy pra posicionamento
             cx={200}
             cy={120}
-            outerRadius={80}
+            outerRadius={80} 
             fill="#8884d8"
             label
           >
@@ -36,4 +34,4 @@ const App = () => {
     </div>
   );
 };
-export default App;
+export default App; 
