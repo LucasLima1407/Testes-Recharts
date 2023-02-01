@@ -14,14 +14,18 @@ const App = () => {
         <PieChart width={400} height={400}>
         <Legend layout="horizontal" verticalAlign="top"/>
           <Pie
-            dataKey="value"
+          //Indicando de onde vamos pegar os dados no json
+            dataKey="Value"
+            nameKey="Name"
             isAnimationActive={false}
-            data={data} //Pegando os dados
+            //Pegando os dados da constante que criamos anteriormente
+            data={data} 
             //cx e cy pra posicionamento
             cx={200}
             cy={120}
-            outerRadius={80} 
+            outerRadius={90} 
             fill="#8884d8"
+            //Mostrar os valores na tabela (Variável Value)
             label
           >
           {data.map((entry, index) => (
